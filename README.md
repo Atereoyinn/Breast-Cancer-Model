@@ -1,60 +1,89 @@
-# Breast Cancer Wisconsin (Diagnostic) Dataset Analysis
+# Breast Cancer Wisconsin Dataset Analysis
 
-## Dataset Overview
+## Project Overview
 
-This project utilizes the Breast Cancer Wisconsin (Diagnostic) Dataset. The features are computed from digitized images of fine needle aspirates (FNA) of breast masses, describing characteristics of cell nuclei present in the images.
+This project analyzes the Breast Cancer Wisconsin (Diagnostic) Dataset to classify breast masses as benign or malignant. It includes data preprocessing, exploratory data analysis, and implementation of both Artificial Neural Network (ANN) and Logistic Regression models.
 
-**Dataset Source:** [UCI Machine Learning Repository](https://archive.ics.uci.edu/ml/datasets/Breast+Cancer+Wisconsin+%28Diagnostic%29)
+## Dataset
 
-## Features
+The dataset used is the Breast Cancer Wisconsin (Diagnostic) Dataset, available from the UCI Machine Learning Repository:
+[https://archive.ics.uci.edu/ml/datasets/Breast+Cancer+Wisconsin+%28Diagnostic%29](https://archive.ics.uci.edu/ml/datasets/Breast+Cancer+Wisconsin+%28Diagnostic%29)
 
-The dataset consists of 32 features, including:
+## Project Structure
 
-1. ID number
-2. Diagnosis (M = malignant, B = benign)
-3. Radius (mean of distances from center to points on the perimeter)
-4. Texture (standard deviation of gray-scale values)
-5. Perimeter
-6. Area
-7. Smoothness (local variation in radius lengths)
-8. Compactness (perimeter^2 / area - 1.0)
-9. Concavity (severity of concave portions of the contour)
-10. Concave points (number of concave portions of the contour)
-11. Symmetry
-12. Fractal dimension ("coastline approximation" - 1)
+The project is structured as a Jupyter notebook (`AYUBA_ABIOLA_30079606_ML.ipynb`) containing all the analysis steps.
 
-For each feature, the mean, standard error, and "worst" (mean of the three largest values) were computed, resulting in 30 features. All feature values were recorded with four significant digits.
+## Installation
 
-## Data Exploration
-
-1. Inspected the first 5 and last 5 rows of each feature.
-2. Checked the dataset shape to determine the number of rows.
-3. Verified feature names and total number of features against the documentation.
-4. Checked for consistency and non-empty values in all columns using the mean method.
-
-## Target Feature
-
-The target feature is the "Diagnosis" column, containing categorical values (M for malignant, B for benign).
-
-## Data Visualization
-
-Visualized the distribution of classes in the target column, revealing two classes:
-- B: Benign
-- M: Malignant
-
-The distribution between classes was found to be relatively balanced.
+1. Clone this repository
+2. Install required libraries:
+   ```
+   pip install pandas numpy matplotlib sklearn plotly seaborn tensorflow keras zipfile
+   ```
 
 ## Data Preprocessing
 
-1. Converted categorical values in the "Diagnosis" column to numerical values using LabelEncoder:
-   - 0: Benign
-   - 1: Malignant
+1. Loaded data from a zip file
+2. Checked for missing values
+3. Encoded the target variable ('M' column) using LabelEncoder
+4. Split the data into training and test sets
+5. Performed feature scaling using StandardScaler
 
-2. Performed bivariate analysis to understand relationships between features and the target feature.
-3. Identified and removed correlated features to improve model performance.
+## Exploratory Data Analysis
 
-## Next Steps
+1. Visualized the distribution of the target variable
+2. Created correlation heatmaps to check for multi-collinearity
+3. Identified and removed highly correlated features
 
-- Feature selection based on correlation analysis
-- Model training and evaluation
-- Performance optimization
+## Models
+
+### Artificial Neural Network (ANN)
+
+- Architecture:
+  - Input layer: 31 neurons
+  - Two hidden layers with 16 neurons each, ReLU activation
+  - Output layer: 1 neuron, sigmoid activation
+- Dropout layers (rate=0.01) to prevent overfitting
+- Compiled with 'adam' optimizer and 'binary_crossentropy' loss
+- Trained for 30 epochs with a batch size of 32
+
+### Logistic Regression
+
+- Implemented from scratch using gradient descent
+- Used sigmoid activation function
+- Trained for 40,000 iterations with a learning rate of 0.001
+
+## Dimensionality Reduction
+
+- Performed Principal Component Analysis (PCA)
+- Used Recursive Feature Elimination with Cross-Validation (RFECV) to identify optimal number of features
+
+## Results
+
+### ANN Results
+
+- Plotted training and validation loss
+- Plotted training and validation accuracy
+- Evaluated using accuracy, precision, recall, and F1 score
+- Generated ROC curve and confusion matrix
+- - Achieved an accuracy of [97.37] %
+
+### Logistic Regression Results
+
+- Plotted cost change over iterations
+- Generated ROC curve
+- Produced classification report and confusion matrix
+- Achieved an accuracy of [97.66] %
+
+## Visualizations
+
+- Correlation heatmaps
+- Feature importance plots
+- ROC curves for both models
+- Confusion matrices
+
+## Contact
+
+[Abiola Ayuba] - [abiolaayubam@gmail.com]
+
+Project Link: [https://github.com/your-username/breast-cancer-analysis](https://github.com/your-username/breast-cancer-analysis)
