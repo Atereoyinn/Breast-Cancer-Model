@@ -86,4 +86,4 @@ The project is structured as a Jupyter notebook (`Breast_Cancer_Classificstion_p
 
 [Abiola Ayuba] - [abiolaayubam@gmail.com]
 
-Project Link: [https://github.com/your-username/breast-cancer-analysis](https://github.com/your-username/breast-cancer-analysis)
+Project Link: [https://github.com/your-username/breast-cancer-analysis](https://github.com/atereoyinn/breast-cancer-model)
