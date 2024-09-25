@@ -11,7 +11,7 @@ The dataset used is the Breast Cancer Wisconsin (Diagnostic) Dataset, available 
 
 ## Project Structure
 
-The project is structured as a Jupyter notebook (`AYUBA_ABIOLA_30079606_ML.ipynb`) containing all the analysis steps.
+The project is structured as a Jupyter notebook (`Breast_Cancer_Classificstion_problem.ipynb`) containing all the analysis steps.
 
 ## Installation
 
